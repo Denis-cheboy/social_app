@@ -1,0 +1,15 @@
+.aConversation{
+    display:flex;
+    padding:10px 16px;
+    gap:16px;
+    align-items: center;
+}
+.aConversation>img{
+    height:35px;
+    width:35px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.aConversation>.username{
+    color:teal;
+}

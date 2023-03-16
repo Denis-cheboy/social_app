@@ -1,0 +1,30 @@
+.aMessage{
+   display: flex;
+   flex-direction: column;
+}
+.aMessage.own{
+    align-items: flex-end;
+}
+.aMessageTop{
+    max-width:300px;
+    background-color: rgb(20, 20, 221);
+    display:flex;
+    color:white;
+    margin:10px;
+    padding:10px;
+    border-radius:20px; 
+    gap:12px;
+}
+.aMessage.own>.aMessageTop{
+    background-color: rgb(41, 48, 54);
+}
+.aMessageTop>.profile{
+    width:30px;
+    height:30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.aMessageTime{
+    margin-top:10px;
+    padding:0px 20px;
+}

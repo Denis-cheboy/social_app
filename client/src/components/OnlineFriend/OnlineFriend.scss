@@ -1,0 +1,34 @@
+// @import "../../style.scss";
+// @include themify($themes){
+//     .aOnlineFriend>span{
+//         font-weight: 500;
+//         color:themed("textColor")
+//     }
+// }
+.aOnlineFriend{
+    display:flex;
+    gap:16px;
+    align-items: center;
+    padding:10px 20px
+}
+.imageWrapper{
+    position: relative;
+    height: 35px;
+    width:34px;
+    border-radius: 50%;
+}
+.imageWrapper>img{
+    width:35px;
+    height:35px;
+    cursor: pointer;
+    border-radius: 50%;
+    object-fit: cover;
+}.imageWrapper>.badge{
+    position: absolute;
+    top:2px;
+    right:0;
+    background-color: green;
+    border-radius: 50%;
+    height:10px;
+    width:10px;
+}

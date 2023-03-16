@@ -1,0 +1,27 @@
+@import "../../style.scss";
+   
+
+.home {
+    @include themify($themes){
+        background-color: themed("bgSoft");
+        padding: 20px 70px;
+        overflow: hidden;
+        @include mobile{
+            padding: 10px;
+        }
+        @include tablet{
+            padding: 20px;
+        }
+    }
+    .createPostWrapper{
+        display: flex;
+        margin-bottom: 20px;
+        justify-content: space-between;
+        align-items: center;
+        padding:8px;
+        border:1px solid grey;
+        color:grey;
+        font-weight: bold;
+        font-size:14px;
+    }
+}
