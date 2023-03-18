@@ -19,17 +19,19 @@ connectDB()
 
 const app=express()
 
-app.use(cors())
+app.use(cors({
+    origin:"https://social_app.onrender.com"
+}))
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 
 // routes
-app.use("/api/users",userRoute)
-app.use("/api/conversations",conversationRoute)
-app.use("/api/messages",messageRoute)
-app.use("/api/auth",authRoute)
-app.use("/api/posts",postRoute)
-app.use("/api/comments",commentRoute)
+app.use("/users",userRoute)
+app.use("/conversations",conversationRoute)
+app.use("/messages",messageRoute)
+app.use("/auth",authRoute)
+app.use("/posts",postRoute)
+app.use("/comments",commentRoute)
 
 // error handler
 app.use(errorHandler)
@@ -54,7 +56,7 @@ const getRoomMessages=async(conversationId)=>{
 const server=require("http").createServer(app)
 const io=require("socket.io")(server,{
     cors:{
-        origin:["http://localhost:3000"]
+        origin:["https://social_app.onrender.com"]
     }
 })
 
@@ -88,7 +90,6 @@ io.on("connection",(socket)=>{
 
        })
        socket.on("disconnect",(socket)=>{
-        console.log("disconnected")
         removeUser(socket.id)
         io.emit("members",users)
        })
