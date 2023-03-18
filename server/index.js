@@ -20,7 +20,7 @@ connectDB()
 const app=express()
 
 app.use(cors({
-    origin:"https://social_app.onrender.com"
+    origin:"https://social-app-q2ku.onrender.com"
 }))
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
@@ -56,7 +56,7 @@ const getRoomMessages=async(conversationId)=>{
 const server=require("http").createServer(app)
 const io=require("socket.io")(server,{
     cors:{
-        origin:["https://social_app.onrender.com"]
+        origin:["https://social-app-q2ku.onrender.com"]
     }
 })
 
