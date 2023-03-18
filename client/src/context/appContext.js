@@ -1,7 +1,7 @@
 import { createContext,useContext,useState,useEffect, useMemo } from "react";
 import io from "socket.io-client"
 
-const socket=io("http://localhost:3500")
+const socket=io("https://social-app-api-et09.onrender.com")
 const AppContext=createContext()
 
 export const AppContextProvider=({children})=>{

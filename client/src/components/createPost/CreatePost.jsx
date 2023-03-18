@@ -46,7 +46,7 @@ const CreatePost = ({setOpen,setPosts}) => {
         try{
           const url=await uploadImg(image)
           const data={...postContent,postPhoto:url,userId:user._id}
-          const res=await axios.post(`http://localhost:3500/api/posts/${user._id}`,data)
+          const res=await axios.post(`https://social-app-api-et09.onrender.com/posts/${user._id}`,data)
           setPosts(posts=>[...posts,res.data])
           setOpen(false)
         }

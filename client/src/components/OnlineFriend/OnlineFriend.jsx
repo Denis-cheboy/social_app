@@ -10,7 +10,7 @@ const OnlineFriend = ({member}) => {
       const fetchMember=async()=>{
         try{
           
-           const res=await axios.get(`http://localhost:3500/api/users/${memberId}`)
+           const res=await axios.get(`https://social-app-api-et09.onrender.com/users/${memberId}`)
            setFriend(res.data)
         }
         catch(err){

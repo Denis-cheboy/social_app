@@ -12,7 +12,7 @@ const Comments = ({post,comments,setComments}) => {
   useEffect(()=>{
     const fetchComments=async()=>{
         try{
-           const res=await axios.get(`http://localhost:3500/api/comments/postComments/${post._id}`)
+           const res=await axios.get(`https://social-app-api-et09.onrender.com/comments/postComments/${post._id}`)
            setComments(res.data)
            
         }
@@ -26,7 +26,7 @@ const Comments = ({post,comments,setComments}) => {
 useEffect(()=>{
       const fetchCommentsByUsers=async()=>{
           try{
-             const res=await axios.get(`http://localhost:3500/api/comments/commentsByusers/users/${post._id}`)
+             const res=await axios.get(`https://social-app-api-et09.onrender.com/comments/commentsByusers/users/${post._id}`)
              setUsers(res.data)
           }
           catch(err){
@@ -44,7 +44,7 @@ useEffect(()=>{
             content:message,
             userId:user._id
         }
-        const res=await axios.post(`http://localhost:3500/api/comments/${post._id}`,data)
+        const res=await axios.post(`https://social-app-api-et09.onrender.com/comments/${post._id}`,data)
         setComments(comment=>[...comment,res.data])
     }
     catch(err){

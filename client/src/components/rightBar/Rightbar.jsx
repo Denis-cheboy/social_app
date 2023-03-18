@@ -26,7 +26,7 @@ const Rightbar = () => {
   useEffect(()=>{
     const fetchUsers=async()=>{
       try{
-        const res=await axios.get("http://localhost:3500/api/users")
+        const res=await axios.get("https://social-app-api-et09.onrender.com/users")
         setUsers(res.data)
       }
       catch(err){
@@ -39,7 +39,7 @@ const Rightbar = () => {
   const handleFollow=async(friendId)=>{
     setClicked(!clicked)
     try{
-      await axios.put(`http://localhost:3500/api/users/follow/${friendId}`,{userId:user?._id})
+      await axios.put(`https://social-app-api-et09.onrender.com/users/follow/${friendId}`,{userId:user?._id})
     }
     catch(err){
       console.log(err.message)

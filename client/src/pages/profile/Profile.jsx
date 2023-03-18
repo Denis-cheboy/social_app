@@ -24,7 +24,7 @@ const Profile = () => {
 
   const handleFollow=async()=>{
     try{
-      await axios.put(`http://localhost:3500/api/users/follow/${id}`,{userId:currentUser?._id})
+      await axios.put(`https://social-app-api-et09.onrender.com/users/follow/${id}`,{userId:currentUser?._id})
       setClicked(!clicked)
     }
     catch(err){
@@ -35,8 +35,8 @@ const Profile = () => {
   useEffect(()=>{
     const fetchUser=async()=>{
       try{
-        const res=await axios.get(`http://localhost:3500/api/users/${id}`)
-        const timeline=await axios.get(`http://localhost:3500/api/users/timeline/${location.state?.userId}`)
+        const res=await axios.get(`https://social-app-api-et09.onrender.com/users/${id}`)
+        const timeline=await axios.get(`https://social-app-api-et09.onrender.com/users/timeline/${location.state?.userId}`)
         setFriendsPost(timeline.data)
         setUser(res.data)
 

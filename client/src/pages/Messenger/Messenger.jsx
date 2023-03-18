@@ -40,7 +40,7 @@ const Messenger = () => {
     useEffect(()=>{
         const fetchConversations=async()=>{
             try{
-              const res =await axios.get(`http://localhost:3500/api/conversations/${user?._id}`)
+              const res =await axios.get(`https://social-app-api-et09.onrender.com/conversations/${user?._id}`)
               setConversations(res.data)
             }
             catch(err){

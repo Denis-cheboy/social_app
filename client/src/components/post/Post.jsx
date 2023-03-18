@@ -24,7 +24,7 @@ const Post = ({post}) => {
     const handleClick=async()=>{
       setLiked(!liked)
       try{
-         const res=await axios.put(`http://localhost:3500/api/posts/like/${post?._id}`,{userId:user?._id})
+         const res=await axios.put(`https://social-app-api-et09.onrender.com/posts/like/${post?._id}`,{userId:user?._id})
          setLikesCount(res.data.post.likes.length)
       }
       catch(err){
@@ -34,7 +34,7 @@ const Post = ({post}) => {
     useEffect(()=>{
        const fetchPost=async()=>{
         try{
-          const res=await axios.get(`http://localhost:3500/api/posts/${post?._id}`)
+          const res=await axios.get(`https://social-app-api-et09.onrender.com/posts/${post?._id}`)
           setCommentCount(res.data.comments.length)
 
         }
@@ -48,7 +48,7 @@ const Post = ({post}) => {
     useEffect(()=>{
        const fetchUser=async()=>{
         try{
-          const res=await axios.get(`http://localhost:3500/api/users/${post?.userId}`)
+          const res=await axios.get(`https://social-app-api-et09.onrender.com/users/${post?.userId}`)
           setCurrUser(res.data)
         }
         catch(err){

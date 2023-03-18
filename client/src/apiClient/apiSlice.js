@@ -3,7 +3,7 @@ import {createApi,fetchBaseQuery} from "@reduxjs/toolkit/query/react"
 const apiSlice=createApi({
     reducerPath:"api",
     baseQuery:fetchBaseQuery({
-        baseUrl:"http://localhost:3500/api"
+        baseUrl:"https://social-app-api-et09.onrender.com"
     }),
     endpoints:(builder)=>({
         login:builder.mutation({

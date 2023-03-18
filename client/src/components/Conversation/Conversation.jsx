@@ -11,7 +11,7 @@ const Conversation = ({conversation}) => {
   useEffect(()=>{
      const fetchFriend=async()=>{
       try{ 
-        const res=await axios.get(`http://localhost:3500/api/users/${friendId}`)
+        const res=await axios.get(`https://social-app-api-et09.onrender.com/users/${friendId}`)
         setFriend(res.data)
       }
       catch(err){
